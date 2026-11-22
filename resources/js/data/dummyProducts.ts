@@ -1,0 +1,289 @@
+import { Product } from '@/types/product';
+
+export const BRANCHES = [
+  'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
+  'Calosa Malang (Soekarno Hatta)',
+  'Calosa Surabaya (Hi-Tech Mall)',
+] as const;
+
+export const CATEGORIES = [
+  'Laptop',
+  'Komponen PC',
+  'Aksesoris',
+  'Tablet & Wearable',
+] as const;
+
+export const DUMMY_PRODUCTS: Product[] = [
+  // --- KATEGORI: LAPTOP ---
+  {
+    id: 'lap-01',
+    name: 'ASUS ROG Zephyrus G14 (2024)',
+    brand: 'ASUS',
+    category: 'Laptop',
+    price: 28999000,
+    branches: [
+      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
+      'Calosa Surabaya (Hi-Tech Mall)',
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80',
+    warranty: '2 Tahun Garansi Resmi ASUS Indonesia + 1 Tahun ADP',
+    description: 'Laptop gaming ultra-portable dengan layar OLED 3K 120Hz dan prosesor AMD Ryzen 9 terbaru.',
+    highlightSpecs: ['Ryzen 9 8945HS', 'RTX 4060 8GB', 'Layar 3K OLED 120Hz'],
+    fullSpecs: {
+      'Prosesor': 'AMD Ryzen 9 8945HS (8 Core, 16 Thread up to 5.2GHz)',
+      'Kartu Grafis': 'NVIDIA GeForce RTX 4060 8GB GDDR6 (TGP 90W)',
+      'RAM': '16GB LPDDR5X 6400MHz Dual Channel',
+      'Penyimpanan': '1TB M.2 NVMe PCIe 4.0 SSD',
+      'Layar': '14.0 inch 3K (2880 x 1800) OLED 16:10 120Hz 0.2ms',
+      'Bobot': '1.50 kg',
+      'Sistem Operasi': 'Windows 11 Home + OHS 2021',
+    },
+  },
+  {
+    id: 'lap-02',
+    name: 'Lenovo IdeaPad Slim 3 14IAH8',
+    brand: 'Lenovo',
+    category: 'Laptop',
+    price: 7899000,
+    branches: [
+      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
+      'Calosa Malang (Soekarno Hatta)',
+      'Calosa Surabaya (Hi-Tech Mall)',
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80',
+    warranty: '2 Tahun Garansi Resmi Lenovo Premium Care',
+    description: 'Laptop kerja harian yang ringkas dan responsif ditenagai prosesor Intel Core i5 generasi ke-12.',
+    highlightSpecs: ['Intel Core i5-12450H', 'RAM 8GB LPDDR5', 'Bobot Ringan 1.37 kg'],
+    fullSpecs: {
+      'Prosesor': 'Intel Core i5-12450H (8 Core, 12 Thread up to 4.4GHz)',
+      'Kartu Grafis': 'Intel UHD Graphics',
+      'RAM': '8GB LPDDR5-4800 (Soldered)',
+      'Penyimpanan': '512GB SSD M.2 2242 PCIe 4.0x4 NVMe',
+      'Layar': '14 inch FHD (1920x1080) IPS 300nits Anti-glare',
+      'Bobot': '1.37 kg',
+      'Sistem Operasi': 'Windows 11 Home + OHS 2021',
+    },
+  },
+  {
+    // SKENARIO UJI: Produk TANPA GAMBAR (imageUrl: null)
+    id: 'lap-03',
+    name: 'Acer Swift Go 14 AI Touch',
+    brand: 'Acer',
+    category: 'Laptop',
+    price: 13499000,
+    branches: ['Calosa Malang (Soekarno Hatta)'],
+    imageUrl: null, // UJI: Komponen Placeholder Gambar (FR-07, AC-06)
+    warranty: '2 Tahun Garansi Resmi Acer + 1 Tahun ADP',
+    description: 'Laptop tipis bertenaga Intel Core Ultra dengan layar sentuh responsif dan dukungan fitur AI terpadu.',
+    highlightSpecs: ['Intel Core Ultra 5 125H', 'Touchscreen OLED', 'Baterai hingga 14 Jam'],
+    fullSpecs: {
+      'Prosesor': 'Intel Core Ultra 5 125H (14 Core, 18 Thread, Intel AI Boost)',
+      'Kartu Grafis': 'Intel Arc Graphics',
+      'RAM': '16GB LPDDR5X Dual Channel',
+      'Penyimpanan': '512GB PCIe Gen4 NVMe SSD',
+      'Layar': '14 inch 2.8K (2880 x 1800) OLED Multi-Touch 90Hz',
+      'Bobot': '1.32 kg',
+      'Sistem Operasi': 'Windows 11 Home',
+    },
+  },
+
+  // --- KATEGORI: KOMPONEN PC ---
+  {
+    id: 'komp-01',
+    name: 'Corsair Vengeance RGB DDR5 32GB (2x16GB) 6000MHz',
+    brand: 'Corsair',
+    category: 'Komponen PC',
+    price: 1850000,
+    branches: [
+      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
+      'Calosa Surabaya (Hi-Tech Mall)',
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=600&auto=format&fit=crop&q=80',
+    warranty: 'Garansi Seumur Hidup Terbatas (Limited Lifetime)',
+    description: 'RAM DDR5 berkinerja tinggi dengan pencahayaan RGB dinamis sepuluh zona terintegrasi software iCUE.',
+    highlightSpecs: ['DDR5 6000MHz', 'Dual Channel 32GB', 'Dukungan XMP 3.0 & EXPO'],
+    fullSpecs: {
+      'Kapasitas': '32GB (2 x 16GB)',
+      'Tipe Memori': 'DDR5 UDIMM 288-pin',
+      'Frekuensi Kecepatan': '6000 MT/s',
+      'Timing Latensi': 'CL36-36-36-76',
+      'Tegangan Operasional': '1.35V',
+      'Pencahayaan': 'Dynamic Ten-Zone RGB',
+    },
+  },
+  {
+    id: 'komp-02',
+    name: 'Samsung 990 PRO NVMe M.2 SSD 1TB Heatsink',
+    brand: 'Samsung',
+    category: 'Komponen PC',
+    price: 2150000,
+    branches: [
+      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
+      'Calosa Malang (Soekarno Hatta)',
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&auto=format&fit=crop&q=80',
+    warranty: '5 Tahun Garansi Resmi Samsung',
+    description: 'SSD NVMe PCIe Gen 4.0 tercepat di kelasnya lengkap dengan heatsink terintegrasi untuk kestabilan suhu.',
+    highlightSpecs: ['Read up to 7450 MB/s', 'PCIe 4.0 x4 NVMe 2.0', 'With Thermal Heatsink'],
+    fullSpecs: {
+      'Form Factor': 'M.2 (2280) with Integrated Heatsink',
+      'Antarmuka': 'PCIe Gen 4.0 x4, NVMe 2.0',
+      'Kecepatan Baca Sekuensial': 'Hingga 7.450 MB/s',
+      'Kecepatan Tulis Sekuensial': 'Hingga 6.900 MB/s',
+      'Ketahanan (TBW)': '600 TBW',
+    },
+  },
+  {
+    // SKENARIO UJI: Produk TANPA GARANSI & TANPA GAMBAR
+    id: 'komp-03',
+    name: 'Thermal Grizzly Kryonaut Extreme Pasta Termal 2g',
+    brand: 'Thermal Grizzly',
+    category: 'Komponen PC',
+    price: 240000,
+    branches: ['Calosa Malang (Pusat - Jl. Mayjen Panjaitan)'],
+    imageUrl: null, // UJI: Null image
+    warranty: null, // UJI: Null warranty (FR-07, AC-06)
+    description: 'Thermal grease performa ekstrem yang dirancang khusus untuk overclocking berat dan pendinginan maksimal.',
+    highlightSpecs: ['Konduktivitas 14.2 W/mk', 'Tidak Mengalirkan Listrik', 'Isi Bersih 2 Gram'],
+    fullSpecs: {
+      'Konduktivitas Termal': '14.2 W/mK',
+      'Kepadatan': '3.76 g/cm3',
+      'Viskositas': '130–180 Pas',
+      'Suhu Operasional': '-250 °C hingga +350 °C',
+    },
+  },
+
+  // --- KATEGORI: AKSESORIS ---
+  {
+    id: 'aks-01',
+    name: 'Logitech MX Master 3S Wireless Mouse',
+    brand: 'Logitech',
+    category: 'Aksesoris',
+    price: 1549000,
+    branches: [
+      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
+      'Calosa Malang (Soekarno Hatta)',
+      'Calosa Surabaya (Hi-Tech Mall)',
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80',
+    warranty: '1 Tahun Garansi Resmi Logitech Indonesia',
+    description: 'Mouse produktivitas ikonik dengan sensor 8.000 DPI yang dapat bekerja di permukaan kaca serta klik senyap.',
+    highlightSpecs: ['Sensor 8000 DPI Darkfield', 'Quiet Click Mechanism', 'Scroll MagSpeed Elektromagnetik'],
+    fullSpecs: {
+      'Resolusi Sensor': '200–8000 DPI (bisa diatur per 50 DPI)',
+      'Konektivitas': 'Bluetooth Low Energy & Logi Bolt USB Receiver',
+      'Daya Tahan Baterai': 'Hingga 70 hari sekali pengisian penuh via USB-C',
+      'Jumlah Tombol': '7 Tombol yang dapat dikustomisasi',
+      'Kompatibilitas': 'Windows, macOS, Linux, iPadOS, Android',
+    },
+  },
+  {
+    id: 'aks-02',
+    name: 'Keychron K2 Pro QMK/VIA Wireless Mechanical Keyboard',
+    brand: 'Keychron',
+    category: 'Aksesoris',
+    price: 1450000,
+    branches: [
+      'Calosa Malang (Soekarno Hatta)',
+      'Calosa Surabaya (Hi-Tech Mall)',
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=600&auto=format&fit=crop&q=80',
+    warranty: '1 Tahun Garansi Resmi Keychron Indonesia',
+    description: 'Keyboard mekanikal nirkabel 75% kustom yang mendukung pemrograman tombol QMK/VIA dan hot-swappable switch.',
+    highlightSpecs: ['Tata Letak Kompak 75%', 'Dukungan QMK/VIA', 'Hot-Swappable Switch'],
+    fullSpecs: {
+      'Tata Letak': '75% (84 tombol)',
+      'Tipe Switch': 'Keychron K Pro Red Mechanical',
+      'Konektivitas': 'Bluetooth 5.1 & Kabel Type-C',
+      'Kapasitas Baterai': '4000 mAh (hingga 300 jam tanpa backlight)',
+      'Keycaps': 'Double-shot PBT profile OSA',
+    },
+  },
+  {
+    // SKENARIO UJI: Produk TANPA DESKRIPSI
+    id: 'aks-03',
+    name: 'Anker PowerPort III 65W Pod GaN Fast Charger',
+    brand: 'Anker',
+    category: 'Aksesoris',
+    price: 399000,
+    branches: ['Calosa Surabaya (Hi-Tech Mall)'],
+    imageUrl: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80',
+    warranty: '18 Bulan Garansi Resmi Anker Indonesia',
+    description: null, // UJI: Null description (FR-07, AC-06)
+    highlightSpecs: ['Output Daya 65W Max', 'Teknologi GaN II', 'Port USB-C Universal'],
+    fullSpecs: {
+      'Total Output': '65 Watt',
+      'Input': '100-240V ~ 2.1A 50-60Hz',
+      'Port': '1x USB-C PowerIQ 3.0',
+      'Teknologi': 'Gallium Nitride (GaN II)',
+    },
+  },
+
+  // --- KATEGORI: TABLET & WEARABLE ---
+  {
+    id: 'tab-01',
+    name: 'Samsung Galaxy Tab S9 FE 5G (6/128GB)',
+    brand: 'Samsung',
+    category: 'Tablet & Wearable',
+    price: 6999000,
+    branches: [
+      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
+      'Calosa Surabaya (Hi-Tech Mall)',
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80',
+    warranty: '1 Tahun Garansi Resmi SEIN',
+    description: 'Tablet produktivitas dan hiburan tahan air IP68 yang sudah dilengkapi S-Pen responsif dalam paket penjualan.',
+    highlightSpecs: ['Layar 10.9 inch 90Hz', 'Sertifikasi Tahan Air IP68', 'Termasuk S-Pen Bawaan'],
+    fullSpecs: {
+      'Layar': '10.9 inch WQXGA (2304 x 1440) TFT 90Hz',
+      'Chipset': 'Exynos 1380 (5 nm) Octa-Core',
+      'RAM & Storage': '6GB RAM / 128GB (MicroSD up to 1TB)',
+      'Baterai': '8.000 mAh Fast Charging 45W',
+      'Ketahanan': 'IP68 Water & Dust Resistance',
+    },
+  },
+  {
+    id: 'tab-02',
+    name: 'Apple Watch Series 9 GPS 45mm Starlight',
+    brand: 'Apple',
+    category: 'Tablet & Wearable',
+    price: 6799000,
+    branches: [
+      'Calosa Malang (Soekarno Hatta)',
+      'Calosa Surabaya (Hi-Tech Mall)',
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80',
+    warranty: '1 Tahun Garansi Resmi Apple Indonesia (iBox/Digimap)',
+    description: 'Smartwatch tercanggih dengan chip S9 SiP, navigasi gesture Double Tap ajaib, dan layar Always-On super cerah.',
+    highlightSpecs: ['Chip S9 SiP & Gesture Double Tap', 'Layar Always-On 2000 nits', 'Sensor EKG & Suhu Tubuh'],
+    fullSpecs: {
+      'Ukuran Case': '45mm (Aluminium Starlight)',
+      'Chip': 'Apple S9 SiP Dual-core 64-bit',
+      'Layar': 'Always-On Retina LTPO OLED, Kecerahan hingga 2000 nits',
+      'Sensor Kesehatan': 'Sensor Oksigen Darah, Sensor EKG Elektrik, Sensor Suhu Tubuh',
+      'Daya Tahan Baterai': 'Hingga 18 jam (36 jam dalam Mode Daya Rendah)',
+    },
+  },
+  {
+    id: 'tab-03',
+    name: 'Xiaomi Pad 6 (8/256GB)',
+    brand: 'Xiaomi',
+    category: 'Tablet & Wearable',
+    price: 4999000,
+    branches: [
+      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
+      'Calosa Malang (Soekarno Hatta)',
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&auto=format&fit=crop&q=80',
+    warranty: '15 Bulan Garansi Resmi Xiaomi Indonesia',
+    description: 'Tablet kerja dan multimedia dengan layar 144Hz 2.8K tajam dan audio quad speaker Dolby Atmos.',
+    highlightSpecs: ['Snapdragon 870', 'Layar 2.8K 144Hz 7-gear', 'Baterai 8840 mAh 33W'],
+    fullSpecs: {
+      'Layar': '11 inch 2.8K (2880 x 1800) WQHD+ 144Hz IPS',
+      'Chipset': 'Qualcomm Snapdragon 870 5G (7 nm)',
+      'RAM & Storage': '8GB LPDDR5 / 256GB UFS 3.1',
+      'Audio': '4 Speaker Stereo Dolby Atmos',
+      'Bobot': '490 gram',
+    },
+  },
+];
