@@ -1,9 +1,8 @@
-import React from 'react';
 import { useFilter } from '@/contexts/FilterContext';
-import { Head, Link } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import FilterSidebar from '@/components/catalog/FilterSidebar';
 import ActiveFilterChips from '@/components/catalog/ActiveFilterChips';
-import { Search, ImageOff, RotateCcw, MapPin } from 'lucide-react';
+import { Search, RotateCcw } from 'lucide-react';
 import ProductCard from '@/components/catalog/ProductCard';
 
 export default function CatalogPage() {

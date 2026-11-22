@@ -10,7 +10,7 @@ export default function ComparePage() {
   const { compareList, clearCompare } = useCompare();
 
   return (
-    <AppLayout>
+    <>
       <Head title="Perbandingan Spesifikasi Produk — Calosa Store" />
 
       <div className="space-y-6">
@@ -50,6 +50,6 @@ export default function ComparePage() {
           <CompareTable />
         )}
       </div>
-    </AppLayout>
+    </>
   );
 }

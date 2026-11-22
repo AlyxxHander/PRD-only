@@ -1,6 +1,4 @@
-import React from 'react';
 import { Head, Link } from '@inertiajs/react';
-import AppLayout from '@/layouts/AppLayout';
 import { DUMMY_PRODUCTS } from '@/data/dummyProducts';
 import { useCompare } from '@/contexts/CompareContext';
 import ImageWithFallback from '@/components/catalog/ImageWithFallback';
@@ -39,7 +37,7 @@ export default function ProductDetailPage({ productId }: ProductDetailPageProps)
   // Jika produk tidak ditemukan
   if (!product) {
     return (
-      <AppLayout>
+      <>
         <Head title="Produk Tidak Ditemukan — Calosa Store" />
         <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center max-w-lg mx-auto">
           <h2 className="text-xl font-bold text-slate-900 mb-2">
@@ -56,7 +54,7 @@ export default function ProductDetailPage({ productId }: ProductDetailPageProps)
             <span>Kembali ke Katalog</span>
           </Link>
         </div>
-      </AppLayout>
+      </>
     );
   }
 
@@ -69,7 +67,7 @@ export default function ProductDetailPage({ productId }: ProductDetailPageProps)
   };
 
   return (
-    <AppLayout>
+    <>
       <Head title={`${product.name} — Calosa Laptop & Gadget Store`} />
 
       <div className="space-y-8">
@@ -136,19 +134,19 @@ export default function ProductDetailPage({ productId }: ProductDetailPageProps)
                 type="button"
                 onClick={handleToggleCompare}
                 className={`py-2.5 px-5 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${selected
-                    ? 'bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/20'
-                    : 'bg-brand-500 hover:bg-brand-600 text-white shadow-lg shadow-brand-500/20'
+                  ? 'bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/20'
+                  : 'bg-brand-500 hover:bg-brand-600 text-white shadow-lg shadow-brand-500/20'
                   }`}
               >
                 {selected ? (
                   <>
                     <Check className="w-4 h-4 stroke-[3]" />
-                    <span>Terpilih dalam Perbandingan ✓</span>
+                    <span>Terpilih dalam Perbandingan</span>
                   </>
                 ) : (
                   <>
                     <Plus className="w-4 h-4 stroke-[2.5]" />
-                    <span>+ Tambah ke Perbandingan</span>
+                    <span>Tambah ke Perbandingan</span>
                   </>
                 )}
               </button>
@@ -238,6 +236,6 @@ export default function ProductDetailPage({ productId }: ProductDetailPageProps)
           <SpecTable specs={product.fullSpecs} />
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

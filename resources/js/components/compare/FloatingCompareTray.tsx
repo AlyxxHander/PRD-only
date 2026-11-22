@@ -7,16 +7,15 @@ import { Scale, X, ArrowRight, Trash2 } from 'lucide-react';
 export default function FloatingCompareTray() {
   const { compareList, removeFromCompare, clearCompare } = useCompare();
 
-  // Jika tidak ada produk yang dipilih, jangan tampilkan tray
-  if (compareList.length === 0) {
-    return null;
-  }
+
 
   // Hitung berapa slot kosong dari maksimal 3 produk
   const emptySlotsCount = Math.max(0, 3 - compareList.length);
+  // Check apakah compare list kosong atau tidak 
+  const emptyCompareList = compareList.length === 0;
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-full max-w-4xl px-4 animate-slideUp">
+    <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-full max-w-4xl px-4 ${emptyCompareList ? "animate-slideDown" : "animate-slideUp"}`}>
       <div className="bg-slate-900/95 backdrop-blur-md text-white border border-slate-700/60 rounded-2xl p-4 shadow-2xl flex flex-wrap items-center justify-between gap-4">
         {/* Info & Counter */}
         <div className="flex items-center gap-3">
