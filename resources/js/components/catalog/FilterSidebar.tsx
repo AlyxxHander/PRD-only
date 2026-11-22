@@ -1,9 +1,27 @@
+import {
+  Filter,
+  RotateCcw,
+  Laptop,
+  Tablet,
+  Smartphone,
+  Printer,
+  Projector,
+  HardDrive,
+  Video,
+  Watch,
+  Headphones,
+  MousePointer,
+  Keyboard,
+  Monitor,
+  Camera,
+  Combine,
+  Touchpad,
+} from 'lucide-react';
 import React, { useMemo } from 'react';
 import { useFilter } from '@/contexts/FilterContext';
 import { CATEGORIES, BRANCHES, DUMMY_PRODUCTS } from '@/data/dummyProducts';
-import { Category, BranchLocation } from '@/types/product';
+import { BranchLocation } from '@/types/product';
 import PriceRangeFilter from '@/components/catalog/PriceRangeFilter';
-import { Filter, RotateCcw, ChevronDown, Laptop, Cpu, Mouse, Tablet } from 'lucide-react';
 
 export default function FilterSidebar() {
   const {
@@ -25,17 +43,42 @@ export default function FilterSidebar() {
     return counts;
   }, []);
 
-  // Ikon pendukung tiap kategori
-  const getCategoryIcon = (category: Category) => {
+  type Category = typeof CATEGORIES[number];
+
+  const getCategoryIcon = (category: Category): React.ReactNode => {
     switch (category) {
-      case 'Laptop':
+      case 'Notebook':
         return <Laptop className="w-3.5 h-3.5 text-blue-500" />;
-      case 'Komponen PC':
-        return <Cpu className="w-3.5 h-3.5 text-purple-500" />;
-      case 'Aksesoris':
-        return <Mouse className="w-3.5 h-3.5 text-emerald-500" />;
-      case 'Tablet & Wearable':
+      case 'Smartphone':
+        return <Smartphone className="w-3.5 h-3.5 text-indigo-500" />;
+      case 'Printer':
+        return <Printer className="w-3.5 h-3.5 text-slate-500" />;
+      case 'Projector':
+        return <Projector className="w-3.5 h-3.5 text-orange-500" />;
+      case 'Flashdisk':
+        return <HardDrive className="w-3.5 h-3.5 text-cyan-500" />;
+      case 'Tablet':
         return <Tablet className="w-3.5 h-3.5 text-amber-500" />;
+      case 'Webcam':
+        return <Video className="w-3.5 h-3.5 text-rose-500" />;
+      case 'Smartwatch':
+        return <Watch className="w-3.5 h-3.5 text-purple-500" />;
+      case 'Accessories':
+        return <Headphones className="w-3.5 h-3.5 text-emerald-500" />;
+      case 'Mouse':
+        return <MousePointer className="w-3.5 h-3.5 text-teal-500" />;
+      case 'Keyboard':
+        return <Keyboard className="w-3.5 h-3.5 text-violet-500" />;
+      case 'Monitor':
+        return <Monitor className="w-3.5 h-3.5 text-sky-500" />;
+      case 'Camera':
+        return <Camera className="w-3.5 h-3.5 text-pink-500" />;
+      case 'Keyboard Mouse':
+        return <Combine className="w-3.5 h-3.5 text-fuchsia-500" />;
+      case 'Mousepad':
+        return <Touchpad className="w-3.5 h-3.5 text-zinc-500" />;
+      default:
+        return <Headphones className="w-3.5 h-3.5 text-gray-400" />;
     }
   };
 
@@ -53,7 +96,7 @@ export default function FilterSidebar() {
           {activeFilterCount > 0 && (
             <button
               onClick={resetFilters}
-              className="text-xs font-semibold text-brand-500 hover:text-brand-600 flex items-center gap-1 transition-colors"
+              className="text-xs font-semibold text-red-400 hover:text-red-600 flex items-center gap-1 transition-colors cursor-pointer"
               title="Reset semua filter ke kondisi awal"
             >
               <RotateCcw className="w-3 h-3" />
@@ -66,7 +109,7 @@ export default function FilterSidebar() {
         <div>
           <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center justify-between">
             <span>Kategori Produk</span>
-            <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+            {/* <ChevronDown className="w-3.5 h-3.5 text-slate-400" /> */}
           </h4>
           <div className="space-y-2">
             {CATEGORIES.map((cat) => {
@@ -75,8 +118,8 @@ export default function FilterSidebar() {
                 <label
                   key={cat}
                   className={`flex items-center justify-between p-2 rounded-xl text-xs font-medium cursor-pointer transition-colors ${isChecked
-                      ? 'bg-brand-50 text-brand-700 font-semibold'
-                      : 'hover:bg-slate-50 text-slate-700'
+                    ? 'bg-brand-50 text-brand-700 font-semibold'
+                    : 'hover:bg-slate-50 text-slate-700'
                     }`}
                 >
                   <div className="flex items-center gap-2.5">
@@ -104,7 +147,7 @@ export default function FilterSidebar() {
         <div className="pt-4 border-t border-slate-100">
           <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center justify-between">
             <span>Cabang Toko Calosa</span>
-            <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+            {/* <ChevronDown className="w-3.5 h-3.5 text-slate-400" /> */}
           </h4>
           <div className="space-y-2.5">
             {BRANCHES.map((branch) => {
@@ -141,7 +184,7 @@ export default function FilterSidebar() {
         <div className="pt-4 border-t border-slate-100">
           <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center justify-between">
             <span>Merek Produk</span>
-            <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+            {/* <ChevronDown className="w-3.5 h-3.5 text-slate-400" /> */}
           </h4>
           <div className="max-h-48 overflow-y-auto space-y-2 pr-1 custom-scrollbar">
             {availableBrands.map((brand) => {

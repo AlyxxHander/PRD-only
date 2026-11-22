@@ -1,29 +1,40 @@
 import { Product } from '@/types/product';
 
 export const BRANCHES = [
-  'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
-  'Calosa Malang (Soekarno Hatta)',
-  'Calosa Surabaya (Hi-Tech Mall)',
+  'Calosa Laptop & Gadget Store Gajayana',
+  'Calosa Laptop & Gadget Store Panjaitan',
+  'Calosa Laptop & Gadget Store Dharmahusada',
 ] as const;
 
 export const CATEGORIES = [
-  'Laptop',
-  'Komponen PC',
-  'Aksesoris',
-  'Tablet & Wearable',
+  'Notebook',
+  'Smartphone',
+  'Printer',
+  'Projector',
+  'Flashdisk',
+  'Tablet',
+  'Webcam',
+  'Smartwatch',
+  'Accessories',
+  'Mouse',
+  'Keyboard',
+  'Monitor',
+  'Camera',
+  'Keyboard Mouse',
+  'Mousepad',
 ] as const;
 
 export const DUMMY_PRODUCTS: Product[] = [
-  // --- KATEGORI: LAPTOP ---
+  // --- KATEGORI: NOTEBOOK ---
   {
     id: 'lap-01',
     name: 'ASUS ROG Zephyrus G14 (2024)',
     brand: 'ASUS',
-    category: 'Laptop',
+    category: 'Notebook',
     price: 28999000,
     branches: [
-      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
-      'Calosa Surabaya (Hi-Tech Mall)',
+      'Calosa Laptop & Gadget Store Gajayana',
+      'Calosa Laptop & Gadget Store Panjaitan',
     ],
     imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80',
     warranty: '2 Tahun Garansi Resmi ASUS Indonesia + 1 Tahun ADP',
@@ -43,12 +54,12 @@ export const DUMMY_PRODUCTS: Product[] = [
     id: 'lap-02',
     name: 'Lenovo IdeaPad Slim 3 14IAH8',
     brand: 'Lenovo',
-    category: 'Laptop',
+    category: 'Notebook',
     price: 7899000,
     branches: [
-      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
-      'Calosa Malang (Soekarno Hatta)',
-      'Calosa Surabaya (Hi-Tech Mall)',
+      'Calosa Laptop & Gadget Store Gajayana',
+      'Calosa Laptop & Gadget Store Dharmahusada',
+      'Calosa Laptop & Gadget Store Panjaitan',
     ],
     imageUrl: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80',
     warranty: '2 Tahun Garansi Resmi Lenovo Premium Care',
@@ -69,9 +80,9 @@ export const DUMMY_PRODUCTS: Product[] = [
     id: 'lap-03',
     name: 'Acer Swift Go 14 AI Touch',
     brand: 'Acer',
-    category: 'Laptop',
+    category: 'Notebook',
     price: 13499000,
-    branches: ['Calosa Malang (Soekarno Hatta)'],
+    branches: ['Calosa Laptop & Gadget Store Dharmahusada'],
     imageUrl: null, // UJI: Komponen Placeholder Gambar (FR-07, AC-06)
     warranty: '2 Tahun Garansi Resmi Acer + 1 Tahun ADP',
     description: 'Laptop tipis bertenaga Intel Core Ultra dengan layar sentuh responsif dan dukungan fitur AI terpadu.',
@@ -87,16 +98,16 @@ export const DUMMY_PRODUCTS: Product[] = [
     },
   },
 
-  // --- KATEGORI: KOMPONEN PC ---
+  // --- KATEGORI: ACCESSORIES (Sebelumnya Komponen PC) ---
   {
     id: 'komp-01',
     name: 'Corsair Vengeance RGB DDR5 32GB (2x16GB) 6000MHz',
     brand: 'Corsair',
-    category: 'Komponen PC',
+    category: 'Accessories',
     price: 1850000,
     branches: [
-      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
-      'Calosa Surabaya (Hi-Tech Mall)',
+      'Calosa Laptop & Gadget Store Gajayana',
+      'Calosa Laptop & Gadget Store Panjaitan',
     ],
     imageUrl: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=600&auto=format&fit=crop&q=80',
     warranty: 'Garansi Seumur Hidup Terbatas (Limited Lifetime)',
@@ -115,11 +126,11 @@ export const DUMMY_PRODUCTS: Product[] = [
     id: 'komp-02',
     name: 'Samsung 990 PRO NVMe M.2 SSD 1TB Heatsink',
     brand: 'Samsung',
-    category: 'Komponen PC',
+    category: 'Accessories',
     price: 2150000,
     branches: [
-      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
-      'Calosa Malang (Soekarno Hatta)',
+      'Calosa Laptop & Gadget Store Gajayana',
+      'Calosa Laptop & Gadget Store Dharmahusada',
     ],
     imageUrl: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&auto=format&fit=crop&q=80',
     warranty: '5 Tahun Garansi Resmi Samsung',
@@ -138,9 +149,9 @@ export const DUMMY_PRODUCTS: Product[] = [
     id: 'komp-03',
     name: 'Thermal Grizzly Kryonaut Extreme Pasta Termal 2g',
     brand: 'Thermal Grizzly',
-    category: 'Komponen PC',
+    category: 'Accessories',
     price: 240000,
-    branches: ['Calosa Malang (Pusat - Jl. Mayjen Panjaitan)'],
+    branches: ['Calosa Laptop & Gadget Store Gajayana'],
     imageUrl: null, // UJI: Null image
     warranty: null, // UJI: Null warranty (FR-07, AC-06)
     description: 'Thermal grease performa ekstrem yang dirancang khusus untuk overclocking berat dan pendinginan maksimal.',
@@ -153,17 +164,17 @@ export const DUMMY_PRODUCTS: Product[] = [
     },
   },
 
-  // --- KATEGORI: AKSESORIS ---
+  // --- KATEGORI: PERIPHERAL & ACCESSORIES ---
   {
     id: 'aks-01',
     name: 'Logitech MX Master 3S Wireless Mouse',
     brand: 'Logitech',
-    category: 'Aksesoris',
+    category: 'Mouse',
     price: 1549000,
     branches: [
-      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
-      'Calosa Malang (Soekarno Hatta)',
-      'Calosa Surabaya (Hi-Tech Mall)',
+      'Calosa Laptop & Gadget Store Gajayana',
+      'Calosa Laptop & Gadget Store Dharmahusada',
+      'Calosa Laptop & Gadget Store Panjaitan',
     ],
     imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80',
     warranty: '1 Tahun Garansi Resmi Logitech Indonesia',
@@ -181,11 +192,11 @@ export const DUMMY_PRODUCTS: Product[] = [
     id: 'aks-02',
     name: 'Keychron K2 Pro QMK/VIA Wireless Mechanical Keyboard',
     brand: 'Keychron',
-    category: 'Aksesoris',
+    category: 'Keyboard',
     price: 1450000,
     branches: [
-      'Calosa Malang (Soekarno Hatta)',
-      'Calosa Surabaya (Hi-Tech Mall)',
+      'Calosa Laptop & Gadget Store Dharmahusada',
+      'Calosa Laptop & Gadget Store Panjaitan',
     ],
     imageUrl: 'https://images.unsplash.com/photo-1595225476474-87563907a212?w=600&auto=format&fit=crop&q=80',
     warranty: '1 Tahun Garansi Resmi Keychron Indonesia',
@@ -204,9 +215,9 @@ export const DUMMY_PRODUCTS: Product[] = [
     id: 'aks-03',
     name: 'Anker PowerPort III 65W Pod GaN Fast Charger',
     brand: 'Anker',
-    category: 'Aksesoris',
+    category: 'Accessories',
     price: 399000,
-    branches: ['Calosa Surabaya (Hi-Tech Mall)'],
+    branches: ['Calosa Laptop & Gadget Store Panjaitan'],
     imageUrl: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80',
     warranty: '18 Bulan Garansi Resmi Anker Indonesia',
     description: null, // UJI: Null description (FR-07, AC-06)
@@ -219,16 +230,16 @@ export const DUMMY_PRODUCTS: Product[] = [
     },
   },
 
-  // --- KATEGORI: TABLET & WEARABLE ---
+  // --- KATEGORI: TABLET & SMARTWATCH ---
   {
     id: 'tab-01',
     name: 'Samsung Galaxy Tab S9 FE 5G (6/128GB)',
     brand: 'Samsung',
-    category: 'Tablet & Wearable',
+    category: 'Tablet',
     price: 6999000,
     branches: [
-      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
-      'Calosa Surabaya (Hi-Tech Mall)',
+      'Calosa Laptop & Gadget Store Gajayana',
+      'Calosa Laptop & Gadget Store Panjaitan',
     ],
     imageUrl: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80',
     warranty: '1 Tahun Garansi Resmi SEIN',
@@ -246,11 +257,11 @@ export const DUMMY_PRODUCTS: Product[] = [
     id: 'tab-02',
     name: 'Apple Watch Series 9 GPS 45mm Starlight',
     brand: 'Apple',
-    category: 'Tablet & Wearable',
+    category: 'Smartwatch',
     price: 6799000,
     branches: [
-      'Calosa Malang (Soekarno Hatta)',
-      'Calosa Surabaya (Hi-Tech Mall)',
+      'Calosa Laptop & Gadget Store Dharmahusada',
+      'Calosa Laptop & Gadget Store Panjaitan',
     ],
     imageUrl: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=80',
     warranty: '1 Tahun Garansi Resmi Apple Indonesia (iBox/Digimap)',
@@ -268,11 +279,11 @@ export const DUMMY_PRODUCTS: Product[] = [
     id: 'tab-03',
     name: 'Xiaomi Pad 6 (8/256GB)',
     brand: 'Xiaomi',
-    category: 'Tablet & Wearable',
+    category: 'Tablet',
     price: 4999000,
     branches: [
-      'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)',
-      'Calosa Malang (Soekarno Hatta)',
+      'Calosa Laptop & Gadget Store Gajayana',
+      'Calosa Laptop & Gadget Store Dharmahusada',
     ],
     imageUrl: 'https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&auto=format&fit=crop&q=80',
     warranty: '15 Bulan Garansi Resmi Xiaomi Indonesia',

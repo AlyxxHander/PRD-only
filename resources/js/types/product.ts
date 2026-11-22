@@ -1,13 +1,24 @@
 export type Category =
-  | 'Laptop'
-  | 'Komponen PC'
-  | 'Aksesoris'
-  | 'Tablet & Wearable';
+  | 'Notebook'
+  | 'Smartphone'
+  | 'Printer'
+  | 'Projector'
+  | 'Flashdisk'
+  | 'Tablet'
+  | 'Webcam'
+  | 'Smartwatch'
+  | 'Accessories'
+  | 'Mouse'
+  | 'Keyboard'
+  | 'Monitor'
+  | 'Camera'
+  | 'Keyboard Mouse'
+  | 'Mousepad';
 
 export type BranchLocation =
-  | 'Calosa Malang (Pusat - Jl. Mayjen Panjaitan)'
-  | 'Calosa Malang (Soekarno Hatta)'
-  | 'Calosa Surabaya (Hi-Tech Mall)';
+  | 'Calosa Laptop & Gadget Store Gajayana'
+  | 'Calosa Laptop & Gadget Store Panjaitan'
+  | 'Calosa Laptop & Gadget Store Dharmahusada'
 
 export interface Product {
   id: string;
